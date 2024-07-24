@@ -1,0 +1,46 @@
+{
+    "name": "svsoft/symfony-request-builder",
+    "description": "Extended logging for the Symfony HTTP Client.",
+    "type": "library",
+    "keywords": [
+        "php",
+        "symfony",
+        "http-client",
+        "http",
+        "builder"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shirykov V.",
+            "email": "shiryakovv@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Svsoft\\SymfonyRequestBuilder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Svsoft\\SymfonyRequestBuilder\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0",
+        "symfony/mime": "^5.0|^6.0",
+        "symfony/http-client": "^5.0|^6.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.11",
+        "phpunit/phpunit": "^10.5",
+        "friendsofphp/php-cs-fixer": "^3.62"
+    },
+    "scripts": {
+        "test": "phpunit tests",
+        "phpstan": "vendor/bin/phpstan analyse",
+        "csfix": "./vendor/bin/php-cs-fixer fix",
+        "csfixer-diff" : "./vendor/bin/php-cs-fixer fix --dry-run --diff"
+    }
+}
