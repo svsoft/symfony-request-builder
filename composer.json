@@ -1,0 +1,14 @@
+{
+    "name": "svsoft/symfony-request-builder",
+    "autoload": {
+        "psr-4": {
+            "Svsoft\\SymfonyRequestBuilder\\": "src/"
+        }
+    },
+    "type": "library",
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/mime": "^6.0",
+        "symfony/http-client": "6.0.*"
+    }
+}
