@@ -26,5 +26,8 @@
         "php": ">=8.0",
         "symfony/mime": "^5.0|^6.0",
         "symfony/http-client": "^5.0|^6.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.11"
     }
 }

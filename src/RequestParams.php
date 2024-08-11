@@ -6,6 +6,9 @@ namespace Svsoft\SymfonyRequestBuilder;
 
 final class RequestParams
 {
+    /**
+     * @var array<string|int, mixed>
+     */
     private array $params = [];
 
     public function add(string|int $name, mixed $value): void
@@ -17,6 +20,9 @@ final class RequestParams
         $this->params[$name] = $value;
     }
 
+    /**
+     * @param array<string|int, mixed> $params
+     */
     public function addParams(array $params): void
     {
         foreach ($params as $name => $value) {
@@ -24,6 +30,9 @@ final class RequestParams
         }
     }
 
+    /**
+     * @return array<string|int, mixed>
+     */
     public function toArray(): array
     {
         return $this->params;

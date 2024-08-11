@@ -72,6 +72,7 @@ final class RequestBuilder
 
     /**
      * Добавляет параметры в запрос, параметры не могут быть перезаписан.
+     * @param array<string|int, mixed> $params
      */
     public function addQueryParams(array $params): self
     {
@@ -92,6 +93,7 @@ final class RequestBuilder
 
     /**
      * Добавляет параметры в боди, параметры не могут быть перезаписан.
+     * @param array<string|int, mixed> $params
      */
     public function addBodyParams(array $params): self
     {
@@ -122,10 +124,12 @@ final class RequestBuilder
         return $this->client->request($this->method, $this->url, $this->prepareOptions());
     }
 
+    /**
+     * @return array<int|string>
+     */
     private function prepareOptions(): array
     {
         $options = (new HttpOptions());
-
 
         if ($this->timeout !== null) {
             $options->setTimeout($this->timeout);
@@ -135,7 +139,9 @@ final class RequestBuilder
 
         $bodyOptions = $this->loadBody();
 
-        return array_merge(...array_map(fn (HttpOptions $options) => $options->toArray(), [$options, $bodyOptions]));
+        return [10,'asd'];
+
+        // return array_merge(...array_map(fn (HttpOptions $options) => $options->toArray(), [$options, $bodyOptions]));
     }
 
     private function loadBody(): HttpOptions
@@ -147,20 +153,6 @@ final class RequestBuilder
         }
 
         return $options;
-    }
-
-    public function json(): self
-    {
-        $this->bodyEncodeStrategy = self::BODY_JSON;
-
-        return $this;
-    }
-
-    public function formData(): self
-    {
-        $this->bodyEncodeStrategy = self::BODY_FORM_DATA;
-
-        return $this;
     }
 
     public function setTimeout(?float $timeout): self

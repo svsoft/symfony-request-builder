@@ -7,6 +7,9 @@ use Symfony\Component\Mime\Part\Multipart\FormDataPart;
 
 class BodyLoaderFormData implements BodyLoaderInterface
 {
+    /**
+     * @param array<string|array> $bodyParams
+     */
     public function apply(HttpOptions $httpOptions, array $bodyParams): void
     {
         $formData = new FormDataPart($bodyParams);
