@@ -1,11 +1,26 @@
 {
     "name": "svsoft/symfony-request-builder",
+    "description": "Extended logging for the Symfony HTTP Client.",
+    "type": "library",
+    "keywords": [
+        "php",
+        "symfony",
+        "http-client",
+        "http",
+        "builder"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shirykov V.",
+            "email": "shiryakovv@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Svsoft\\SymfonyRequestBuilder\\": "src/"
         }
     },
-    "type": "library",
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.0",
