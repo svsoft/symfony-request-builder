@@ -1,6 +1,6 @@
 {
     "name": "svsoft/symfony-request-builder",
-    "description": "Extended logging for the Symfony HTTP Client.",
+    "description": "Simple builder for the sending request based on the component symfony/http-client",
     "type": "library",
     "keywords": [
         "php",

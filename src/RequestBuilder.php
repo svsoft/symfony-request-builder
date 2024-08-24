@@ -95,8 +95,6 @@ final class RequestBuilder
     }
 
     /**
-     * Добавляет параметры в боди, параметры не могут быть перезаписан.
-     *
      * @param array<string, mixed> $params
      */
     public function setBodyParams(array $params): self
