@@ -78,7 +78,7 @@ final class RequestBuilder
     }
 
     /**
-     * @param array<string, mixed> $params
+     * @param array<string|int, mixed> $params
      */
     public function setQueryParams(array $params): self
     {
@@ -87,7 +87,7 @@ final class RequestBuilder
         return $this;
     }
 
-    public function setQueryParam(string $name, string|int|array $value): self
+    public function setQueryParam(string $name, string|int|float|array $value): self
     {
         $this->queryParams->set($name, $value);
 
@@ -95,7 +95,7 @@ final class RequestBuilder
     }
 
     /**
-     * @param array<string, mixed> $params
+     * @param array<string|int, mixed> $params
      */
     public function setBodyParams(array $params): self
     {

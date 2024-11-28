@@ -7,7 +7,7 @@ namespace Svsoft\SymfonyRequestBuilder;
 final class RequestParams
 {
     /**
-     * @var array<string, mixed>
+     * @var array<string|int, mixed>
      */
     private array $params = [];
 
@@ -17,14 +17,11 @@ final class RequestParams
     }
 
     /**
-     * @param array<string, mixed> $params
+     * @param array<string|int, mixed> $params
      */
     public function setParams(array $params): void
     {
-        $this->params = [];
-        foreach ($params as $name => $value) {
-            $this->set($name, $value);
-        }
+        $this->params = $params;
     }
 
     /**
